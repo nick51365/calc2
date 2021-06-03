@@ -9,23 +9,23 @@ const clear = document.getElementById("clear");
 const numButtons = document.querySelectorAll("button.numBtn");
 const btnEquals = document.getElementById("btnEquals");
 
-//Adds click listeners to number buttons
+//Adds event listeners to number buttons
 for (i = 0; i < numButtons.length; i++){
     let btnValue = numButtons[i].value;
     numButtons[i].addEventListener("click", () => addDisplay(btnValue)); 
 }
 
-//Adds click listeners to operation buttons
+//Adds event listeners to operation buttons
 document.getElementById("btnAdd").addEventListener("click",() => setOperation("Add"));;
 document.getElementById("btnSubtract").addEventListener("click",() => setOperation("Subtract"));
 document.getElementById("btnMultiply").addEventListener("click",() => setOperation("Multiply"));
 document.getElementById("btnDivide").addEventListener("click",() => setOperation("Divide"));
 
-//Adds click listener to equals button
+//Adds event listener to equals button
 btnEquals.addEventListener("click",() => operate());
 btnEquals.addEventListener("click",() => saveValue = "");
 
-//Adds click listener to clear button
+//Adds event listener to clear button
 clear.addEventListener("click",() => clearDisplay());
 
 function addDisplay(btnValue){  
@@ -54,11 +54,11 @@ function setOperation(a){
     
         console.log("overwrite blank",saveValue);
         console.log(operation);
-    
+
         }else{
             operate();
         }    
-    
+
     newNumber = true;
     if (a == "Add"){
         operation = "Add"
@@ -69,7 +69,6 @@ function setOperation(a){
     }else if (a == "Divide"){
         operation = "Divide"
     }
-
 }
 
 function operate(){
